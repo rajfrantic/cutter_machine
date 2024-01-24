@@ -25,7 +25,16 @@ class MethodChannelCutterMachine extends CutterMachinePlatform {
     final version = await methodChannel.invokeMethod<String>('cutFileBluetooth',file);
     return version;
   }
-
+  @override
+  Future<String?> setPressure(file) async {
+    final version = await methodChannel.invokeMethod<String>('setPressure',file);
+    return version;
+  }
+  @override
+  Future<String?> setSpeed(file) async {
+    final version = await methodChannel.invokeMethod<String>('setSpeed',file);
+    return version;
+  }
   @override
   Future<String?> cutFileWithHeightAndWidthBluetooth(file,{required int xoffset,required int yoffset,required int width,required int height , bool xflip = false, bool yflip = false,
 int ang = 0, bool section = false  }) async {

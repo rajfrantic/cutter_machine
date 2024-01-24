@@ -17,4 +17,11 @@ class CutterMachine {
     int ang = 0, bool section = false  }) {
     return CutterMachinePlatform.instance.cutFileWithHeightAndWidthBluetooth(file, xoffset: xoffset, yoffset: yoffset, width: width, height: height,ang: 0,section: false,xflip: false,yflip: false);
   }
+
+  Future<String?> setPressure(file) {
+    return CutterMachinePlatform.instance.setPressure(file);
+  }
+  Future<String?> setSpeed(file) {
+    return CutterMachinePlatform.instance.setSpeed(file);
+  }
 }

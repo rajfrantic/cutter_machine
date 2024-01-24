@@ -34,6 +34,12 @@ abstract class CutterMachinePlatform extends PlatformInterface {
   Future<String?> cutFileBluetooth(file) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+  Future<String?> setPressure(file) {
+    throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+  Future<String?> setSpeed(file) {
+    throw UnimplementedError('platformVersion() has not been implemented.');
+  }
   Future<String?> cutFileWithHeightAndWidthBluetooth(file,{required int xoffset,required int yoffset,required int width,required int height , bool xflip = false, bool yflip = false,
   int ang = 0, bool section = false  }) {
     throw UnimplementedError('platformVersion() has not been implemented.');

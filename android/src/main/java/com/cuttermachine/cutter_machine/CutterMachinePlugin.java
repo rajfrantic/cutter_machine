@@ -117,6 +117,35 @@ public class CutterMachinePlugin implements FlutterPlugin, MethodCallHandler, Ac
     String fileName = "苹果6前膜.blt";
       BluetoothSDK.getInstance().cutFile(call.arguments.toString(), fileName);
       result.success("connected");
+    }else if (call.method.equals("setSpeed")) {
+      BluetoothSDK.getInstance().setMachineSpeed(Integer.valueOf(call.arguments.toString()), new IBleDefaultResultCallBack() {
+        @Override
+        public void onSuccessful() {
+          result.success("Set Successfully");
+        }
+
+        @Override
+        public void onError(int i, String s) {
+          result.success("Failed");
+
+        }
+      });
+
+    }else if (call.method.equals("setPressure")) {
+
+      BluetoothSDK.getInstance().setMachinePressure(Integer.valueOf(call.arguments.toString()), new IBleDefaultResultCallBack() {
+        @Override
+        public void onSuccessful() {
+          result.success("Set Successfully");
+        }
+
+        @Override
+        public void onError(int i, String s) {
+          result.success("Failed");
+
+        }
+      });
+
     }else if (call.method.equals("cutFileWithHeightAndWidthBluetooth")) {
       String fileName = "苹果6前膜.blt";
       Log.d("Raj data ", "onMethodCall: " +call.arguments.toString());

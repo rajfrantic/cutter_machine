@@ -35,6 +35,18 @@ class MockCutterMachinePlatform
     throw UnimplementedError();
   }
 
+  @override
+  Future<String?> setPressure(file) {
+    // TODO: implement setPressure
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> setSpeed(file) {
+    // TODO: implement setSpeed
+    throw UnimplementedError();
+  }
+
  
 }
 
