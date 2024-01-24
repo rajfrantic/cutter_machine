@@ -26,6 +26,8 @@ import com.inuker.bluetooth.library.cc.BluetoothSDK;
 import com.inuker.bluetooth.library.cc.MachineEnum;
 import com.inuker.bluetooth.library.cc.listener.IBluetoothConnectListener;
 import com.inuker.bluetooth.library.cc.listener.IBluetoothSearchListener;
+import com.inuker.bluetooth.library.cc.IBleDefaultResultCallBack;
+
 import com.inuker.bluetooth.library.search.SearchResult;
 
 import org.json.JSONObject;
@@ -118,7 +120,7 @@ public class CutterMachinePlugin implements FlutterPlugin, MethodCallHandler, Ac
       BluetoothSDK.getInstance().cutFile(call.arguments.toString(), fileName);
       result.success("connected");
     }else if (call.method.equals("setSpeed")) {
-      BluetoothSDK.getInstance().setMachineSpeed(Integer.valueOf(call.arguments.toString()), new IBleDefaultResultCallBack() {
+      BluetoothSDK.getInstance().setMachineSpeed(Integer.parseInt(call.arguments.toString()), new IBleDefaultResultCallBack() {
         @Override
         public void onSuccessful() {
           result.success("Set Successfully");
@@ -133,7 +135,7 @@ public class CutterMachinePlugin implements FlutterPlugin, MethodCallHandler, Ac
 
     }else if (call.method.equals("setPressure")) {
 
-      BluetoothSDK.getInstance().setMachinePressure(Integer.valueOf(call.arguments.toString()), new IBleDefaultResultCallBack() {
+      BluetoothSDK.getInstance().setMachinePressure(Integer.parseInt(call.arguments.toString()), new IBleDefaultResultCallBack() {
         @Override
         public void onSuccessful() {
           result.success("Set Successfully");
